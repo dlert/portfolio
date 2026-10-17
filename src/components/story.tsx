@@ -15,10 +15,10 @@ export function Story() {
           Writing
         </p>
         <div className="space-y-5 text-[clamp(1.15rem,2vw,1.5rem)] leading-snug tracking-tight lg:col-span-9">
-          <p className="font-mono text-[12px] tracking-wider text-muted-foreground">Web3 · X · Substack</p>
+          <p className="font-mono text-[12px] tracking-wider text-muted-foreground">Web3 · X · Substack · Medium · Reddit</p>
           <p>
             Before most of my code, I wrote. I’ve written a lot about Web3 projects, mainly as threads on X, with
-            longer pieces on Substack and other platforms.
+            longer pieces on Substack, Medium and Reddit.
           </p>
           <p className="text-muted-foreground">
             It taught me to explain technical ideas clearly, and I bring that to every spec and prompt I write.

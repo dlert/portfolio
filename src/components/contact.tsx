@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { useState } from 'react'
-import { ArrowUpRight, Check, Copy } from 'lucide-react'
+import { ArrowUpRight, Check, Copy, Download } from 'lucide-react'
 import { fadeUp } from '@/lib/motion'
 
 const email = 'ferdar4444@gmail.com'
@@ -51,6 +51,14 @@ export function Contact() {
             {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
           </button>
         </div>
+        <a
+          href="/Adeniyi-Oluwaferanmi-CV.pdf"
+          download="Adeniyi Oluwaferanmi CV.pdf"
+          className="group mt-6 inline-flex items-center gap-2 font-mono text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <Download className="size-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
+          Download my CV (PDF)
+        </a>
       </motion.div>
     </section>
   )
