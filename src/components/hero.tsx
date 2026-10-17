@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
-import { ArrowDown, Download, Mail } from 'lucide-react'
+import { ArrowDown, Download } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ease } from '@/lib/motion'
 
@@ -55,12 +55,6 @@ export function Hero() {
             <a href="#work">
               See my work
               <ArrowDown className="size-4 transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-y-0.5" />
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="group">
-            <a href="#contact">
-              Get in touch
-              <Mail className="size-4 transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:-translate-y-0.5" />
             </a>
           </Button>
           <Button asChild size="lg" variant="outline" className="group">
