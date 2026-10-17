@@ -38,9 +38,11 @@ export function Hero() {
           transition={{ duration: 1, ease, delay: 0.75 }}
           className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[clamp(0.95rem,1.9vw,1.2rem)] tracking-tight text-muted-foreground"
         >
+          <span>BSc Computer Science</span>
+          <span aria-hidden className="size-1 rounded-full bg-muted-foreground/50" />
           <span>Founder, Ferdar Limited</span>
           <span aria-hidden className="size-1 rounded-full bg-muted-foreground/50" />
-          <span className="text-foreground">AI-Assisted Developer</span>
+          <span className="text-foreground">Backend Engineer</span>
         </motion.p>
 
         <motion.div
