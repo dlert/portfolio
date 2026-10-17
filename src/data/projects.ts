@@ -31,7 +31,7 @@ export const projects: Project[] = [
       'L2 regularisation, 0.6 dropout and data augmentation held the overfitting gap to 0.01',
       '5.3 points above the 92.7% reported by Verma et al. (2024) for a comparable CNN system',
     ],
-    stack: ['Python', 'OpenCV', 'FaceNet', 'Google Colab'],
+    stack: ['Python', 'TensorFlow', 'Keras', 'FaceNet', 'OpenCV', 'scikit-learn', 'Google Colab'],
     image: '/projects/face-recognition-attendance.png',
   },
   {
