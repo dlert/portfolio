@@ -26,7 +26,7 @@ export function Nav() {
         )}
       >
         <a href="#top" className="font-mono text-[15px] font-semibold tracking-tight">
-          Adeniyi<span className="text-muted-foreground">.</span>
+          Oluwaferanmi<span className="text-muted-foreground">.</span>
         </a>
         <div className="flex items-center gap-6 font-mono text-[12.5px] text-muted-foreground">
           <a href="#work" className="transition-colors hover:text-foreground">

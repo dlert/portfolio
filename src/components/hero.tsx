@@ -42,7 +42,7 @@ export function Hero() {
           <span aria-hidden className="size-1 rounded-full bg-muted-foreground/50" />
           <span>Founder, Ferdar Limited</span>
           <span aria-hidden className="size-1 rounded-full bg-muted-foreground/50" />
-          <span className="text-foreground">Backend Engineer</span>
+          <span className="text-foreground">Web Developer</span>
         </motion.p>
 
         <motion.div
