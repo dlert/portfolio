@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Whole page renders at 75%, like browser zoom. The hero divides its height by this to stay full-screen. */
+  --page-zoom: 0.75;
+  --radius: 1.25rem;
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.16 0 0);
+  --muted: oklch(0.965 0 0);
+  --muted-foreground: oklch(0.52 0 0);
+  --border: oklch(0.92 0 0);
+  --primary: oklch(0.16 0 0);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.55 0 0);
+  --placeholder: oklch(0.955 0 0);
+}
+
+/* Dark tokens: follow the system unless the visitor picked a theme with the nav toggle (html[data-theme]). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --background: oklch(0.13 0 0);
+    --foreground: oklch(0.97 0 0);
+    --muted: oklch(0.2 0 0);
+    --muted-foreground: oklch(0.66 0 0);
+    --border: oklch(0.25 0 0);
+    --primary: oklch(0.97 0 0);
+    --primary-foreground: oklch(0.14 0 0);
+    --ring: oklch(0.6 0 0);
+    --placeholder: oklch(0.18 0 0);
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.97 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.66 0 0);
+  --border: oklch(0.25 0 0);
+  --primary: oklch(0.97 0 0);
+  --primary-foreground: oklch(0.14 0 0);
+  --ring: oklch(0.6 0 0);
+  --placeholder: oklch(0.18 0 0);
+  color-scheme: dark;
+}
+
+/* Hide the native cursor everywhere (links included) while SmoothCursor is active */
+html.smooth-cursor,
+html.smooth-cursor * {
+  cursor: none !important;
+}
+
+/* Smooth colour change when toggling the theme */
+html.theme-transition,
+html.theme-transition * {
+  transition:
+    background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-placeholder: var(--placeholder);
+  --radius-lg: var(--radius);
+  --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    zoom: var(--page-zoom);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Glass fade pinned to the bottom of the viewport */
+.glass-fade {
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  background: linear-gradient(to bottom, transparent, color-mix(in oklch, var(--background) 70%, transparent));
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 70%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 70%);
+}
+
+/* Placeholder stripes for missing screenshots */
+.placeholder-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 5%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
